@@ -1,9 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "DotGothic16", sans-serif;
 }
-.mainContainer {
+#mainContainer {
+  display: flex;
+}
+.gameBoard {
   display: grid;
   height: 100vh;
   width: 60vw;
@@ -11,6 +16,7 @@
   background: black;
   grid-template-columns: repeat(30, 1fr);
   grid-template-rows: repeat(25, 1fr);
+  margin-left: 3%;
 }
 .snake {
   background: lime;
@@ -19,4 +25,20 @@
 
 .food {
   background-color: red;
+}
+.currScoreDiv,
+.currLevel {
+  /* border: 1px solid black; */
+  width: 200px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 20px 30px;
+  text-align: center;
+  /* font-size: 1rem; */
+  background: linear-gradient(lime, red);
+  color: white;
+}
+.currLevel {
+  margin-right: 2%;
 }

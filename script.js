@@ -1,8 +1,9 @@
 // snake head initially cordinates
 let snakeCordinates = [{ x: 10, y: 10 }];
 
-let gameBoard = document.getElementsByClassName("mainContainer")[0];
+let gameBoard = document.getElementsByClassName("gameBoard")[0];
 
+let currScore = document.querySelectorAll(".currScore")[0];
 // food initially cordinate
 let food = { x: 20, y: 10 };
 //direction changed according to the key type
@@ -55,17 +56,21 @@ function update() {
   snakeCordinates[0].y += myDir.y;
   if (isCollide(snakeCordinates)) {
     setTimeout(() => {
-      alert("Game over");
+      alert(`Game over and your max score is ${currScore.innerHTML}`);
     }, 100);
 
     snakeCordinates = [{ x: 10, y: 10 }];
     inputDir = { x: 0, y: 0 };
     food = { x: 20, y: 10 };
+    setTimeout(() => {
+      currScore.innerHTML = 0;
+    }, 101);
   }
 
   // when snake eat his food
 
   if (snakeCordinates[0].x == food.x && snakeCordinates[0].y == food.y) {
+    currScore.innerHTML = Number(currScore.innerHTML) + 1;
     food.x = Math.floor(Math.random() * (30 - 1 + 1)) + 1;
     food.y = Math.floor(Math.random() * (25 - 1 + 1)) + 1;
     snakeCordinates.push({
