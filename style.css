@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mainContainer {
+  display: grid;
+  height: 100vh;
+  width: 60vw;
+  margin: auto;
+  background: black;
+  grid-template-columns: repeat(30, 1fr);
+  grid-template-rows: repeat(25, 1fr);
+}
+.snake {
+  background: lime;
+  border: 1px solid black;
+}
+
+.food {
+  background-color: red;
+}
